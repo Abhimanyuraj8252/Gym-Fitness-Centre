@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  IRON LEGACY - HIGH END LIGHT FUTURISTIC THEME
+  Palette:
+  - BG: #F8FAFC (Slate 50)
+  - Text: #0F172A (Slate 900)
+  - Primary Accent: #3B82F6 (Electric Blue)
+  - Secondary Accent: #EAB308 (Neon Yellow)
+*/
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans tracking-wide selection:bg-yellow-400 selection:text-black;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display uppercase tracking-tighter;
+  }
+}
+
+@layer components {
+  /* HOLOGRAPHIC CARDS */
+  .neo-card {
+    @apply bg-white/80 backdrop-blur-md border border-slate-200 shadow-xl shadow-blue-500/5 rounded-2xl transition-all duration-300;
+  }
+  .neo-card:hover {
+    @apply border-blue-500/50 shadow-blue-500/20 -translate-y-1;
+  }
+
+  /* BUTTONS */
+  .btn-primary {
+    @apply relative overflow-hidden bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50 transition-all duration-300 uppercase tracking-widest text-sm hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-accent {
+    @apply bg-yellow-400 text-black font-black py-3 px-8 rounded-full shadow-lg shadow-yellow-400/30 hover:bg-yellow-300 transition-all duration-300 uppercase tracking-widest text-sm hover:-translate-y-0.5;
+  }
+
+  /* FORM INPUTS */
+  .neo-input {
+    @apply w-full bg-white border-2 border-slate-200 text-slate-900 text-lg px-4 py-3 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all placeholder:text-slate-400;
+  }
+
+  /* TEXT EFFECTS */
+  .text-glow {
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Oswald', sans-serif;
+  }
+  .font-sans {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* ANIMATIONS */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .rotate-y-12 {
+    transform: rotateY(12deg);
+  }
+}
